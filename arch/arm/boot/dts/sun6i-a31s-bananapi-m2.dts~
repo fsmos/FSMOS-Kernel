@@ -123,9 +123,9 @@
                 bgr;
                 fps = <30>;
                 buswidth = <8>;
-                reset-gpios = <&pio 6 8 0>;
-                dc-gpios = <&pio 7 12 0>;
-                led-gpios = <&pio 6 9 1>;
+                reset-gpios = <&pio 25 0 GPIO_ACTIVE_HIGH>;
+                dc-gpios = <&pio 24 0 GPIO_ACTIVE_HIGH>;
+                led-gpios = <&pio 22 1 GPIO_ACTIVE_HIGH>;
  
                 init = <0x10000b0 0x00
                         0x1000011
@@ -139,7 +139,7 @@
                         0x10000E2 0x0F 0x32 0x2E 0x0B 0x0D 0x05 0x47 0x75 0x37 0x06 0x10 0x03 0x24 0x20 0x00
                         0x1000011
                         0X1000029>;
-                debug = <1>;
+                debug = <0>;
         };
  
         piscreen_ts@1 {
@@ -149,7 +149,7 @@
  
                 spi-max-frequency = <2000000>;
                 interrupts = <3 17>;
-                pendown-gpio = <&pio 6 7 0>;
+                pendown-gpio = <&pio 17 0 GPIO_ACTIVE_HIGH>;
                 ti,x-plate-ohms = /bits/ 16 <100>;
                 ti,pressure-max = /bits/ 16 <255>;
         };

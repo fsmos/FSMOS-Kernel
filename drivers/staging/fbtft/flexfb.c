@@ -440,12 +440,12 @@ static int flexfb_probe_common(struct spi_device *sdev,
 			par->fbtftops.write_register = fbtft_write_reg8_bus9;
 			par->fbtftops.write_vmem = fbtft_write_vmem16_bus9;
 			sdev->bits_per_word = 9;
-			ret = sdev->master->setup(sdev);
+			ret = spi_setup(sdev);
 			if (ret) {
 				dev_warn(dev,
 					"9-bit SPI not available, emulating using 8-bit.\n");
 				sdev->bits_per_word = 8;
-				ret = sdev->master->setup(sdev);
+				ret = spi_setup(sdev);
 				if (ret)
 					goto out_release;
 				/* allocate buffer with room for dc bits */
