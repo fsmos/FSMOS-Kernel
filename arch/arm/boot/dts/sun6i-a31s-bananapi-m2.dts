@@ -119,7 +119,7 @@
                 status = "okay";
  
                 spi-max-frequency = <20000000>;
-                rotate = <270>;
+                rotate = <0>;
                 bgr;
                 fps = <30>;
                 buswidth = <8>;

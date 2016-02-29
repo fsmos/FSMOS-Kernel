@@ -481,7 +481,7 @@ static int sun6i_spi_probe(struct platform_device *pdev)
 	}
 
 	//init_completion(&sspi->done);
-     master->dma_tx = dma_request_slave_channel_reason(&pdev->dev, "tx");
+        master->dma_tx = dma_request_slave_channel_reason(&pdev->dev, "tx");
 	if (IS_ERR(master->dma_tx)) {
 		dev_err(&pdev->dev, "Unable to acquire DMA channel TX\n");
 		ret = PTR_ERR(master->dma_tx);
