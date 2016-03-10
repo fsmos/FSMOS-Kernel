@@ -148,7 +148,8 @@
                 status = "okay";
  
                 spi-max-frequency = <2000000>;
-                interrupts = <3 17>;
+                interrupts =<6 7 IRQ_TYPE_LEVEL_LOW>;
+                interrupt-parent = <&pio>;
                 pendown-gpio = <&pio 6 7 0>;
                 ti,x-plate-ohms = /bits/ 16 <100>;
                 ti,pressure-max = /bits/ 16 <255>;
