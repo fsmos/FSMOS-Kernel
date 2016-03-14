@@ -1258,8 +1258,8 @@ static int ads7846_probe(struct spi_device *spi)
 	int err;
 
 	if (!spi->irq) {
-		dev_dbg(&spi->dev, "no IRQ?\n");
-		return -EINVAL;
+		dev_err(&spi->dev, "no IRQ?\n");
+		return spi->irq;
 	}
 
 	/* don't exceed max specified sample rate */
