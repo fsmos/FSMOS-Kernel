@@ -164,8 +164,7 @@ struct ads7846 {
 #define	ADS_A2A1A0_d_z1		(3 << 4)	/* differential */
 #define	ADS_A2A1A0_d_z2		(4 << 4)	/* differential */
 #define	ADS_A2A1A0_d_x		(5 << 4)	/* differential */
-#define	ADS_A2A1A0_temp0	(0 << 4)	/* non-differential */
-#define	ADS_A2A1A0_vbatt	(2 << 4)	/* non-differential */
+#define	ADS_A2A1A0_temp0	(0 << 4)	/* non-differential */#define	ADS_A2A1A0_vbatt	(2 << 4)	/* non-differential */
 #define	ADS_A2A1A0_vaux		(6 << 4)	/* non-differential */
 #define	ADS_A2A1A0_temp1	(7 << 4)	/* non-differential */
 #define	ADS_8_BIT		(1 << 3)

@@ -145,11 +145,12 @@
         piscreen_ts@1 {
                 compatible = "ti,ads7846";
                 reg = <1>;
+                pinctrl-names = "default";
+	        pinctrl-0 = <&pendown_g11>;
                 status = "okay";
  
                 spi-max-frequency = <2000000>;
-                interrupts =<6 7 IRQ_TYPE_LEVEL_LOW>;
-                interrupt-parent = <&pio>;
+                interrupts =<&pio 6 3 7 IRQ_TYPE_LEVEL_LOW>;
                 pendown-gpio = <&pio 6 7 0>;
                 ti,x-plate-ohms = /bits/ 16 <100>;
                 ti,pressure-max = /bits/ 16 <255>;
@@ -241,6 +242,12 @@
 	led_pins_bananapi: led_pins@0 {
 		allwinner,pins = "PG10", "PG5", "PG11";
 		allwinner,function = "gpio_out";
+		allwinner,drive = <SUN4I_PINCTRL_10_MA>;
+		allwinner,pull = <SUN4I_PINCTRL_NO_PULL>;
+	};
+       pendown_g11:pendown@0 {
+		allwinner,pins = "PG7";
+		allwinner,function = "irq";
 		allwinner,drive = <SUN4I_PINCTRL_10_MA>;
 		allwinner,pull = <SUN4I_PINCTRL_NO_PULL>;
 	};
